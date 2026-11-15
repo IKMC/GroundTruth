@@ -1,0 +1,26 @@
+{
+  "schedule": "0 0 6 * * *",
+  "genesisDate": "2026-10-01",
+  "backendUrl": "https://REPLACE-WITH-YOUR-BACKEND-URL",
+  "oracleAddress": "0xREPLACE_WITH_FIELD_ORACLE_ADDRESS",
+  "chainSelectorName": "ethereum-testnet-sepolia",
+  "gasLimit": "1500000",
+  "baseRewardField": "2",
+  "cells": [
+    {
+      "id": "cell-a",
+      "lat": 12.0,
+      "lon": 8.5
+    },
+    {
+      "id": "cell-b",
+      "lat": 11.5,
+      "lon": 9.0
+    },
+    {
+      "id": "cell-c",
+      "lat": 10.5,
+      "lon": 7.5
+    }
+  ]
+}

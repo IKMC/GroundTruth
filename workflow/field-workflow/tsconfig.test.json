@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "main.ts",
+    "core/**/*.ts",
+    "test/**/*.ts"
+  ],
+  "exclude": [
+    "test/gen-vector.ts"
+  ]
+}

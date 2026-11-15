@@ -1,0 +1,24 @@
+/**
+ * Prints the demo volunteers' addresses AND private keys, so you can import one into a wallet and claim.
+ *
+ *   npm run keys            (volunteers 1 to 5, the ones npm run seed creates)
+ *   COUNT=7 npm run keys
+ *
+ * These keys come from a public formula (key = 1000 + index). Anyone who reads this repository can
+ * derive them. Use them on TESTNETS ONLY, in a separate wallet profile, and never send real funds.
+ */
+import { privateKeyToAccount } from "viem/accounts"
+import type { Hex } from "viem"
+
+// Must stay identical to keyOf() in seed-demo.ts
+const keyOf = (i: number): Hex => `0x${(i + 1000).toString(16).padStart(64, "0")}`
+const COUNT = Number(process.env.COUNT ?? 5)
+
+console.log("Demo volunteers (public testnet keys, never use with real funds)\n")
+for (let i = 0; i < COUNT; i++) {
+  console.log(`volunteer ${i + 1}`)
+  console.log(`  address:     ${privateKeyToAccount(keyOf(i)).address}`)
+  console.log(`  private key: ${keyOf(i)}\n`)
+}
+const liar = privateKeyToAccount(keyOf(900)).address
+console.log(`(the seeded liar is ${liar}: it earns no reward, so do not claim with it)`)
